@@ -10,8 +10,11 @@ class Navbar extends React.Component {
         this.active = '/overview';
     }
 
-    setActive(elem) {
-        
+
+    isActive(elem) {
+        if(elem == window.location.pathname)
+            return true;
+        return false;
     }
 
     render() {
@@ -19,9 +22,9 @@ class Navbar extends React.Component {
             <Nav 
             items={
             <React.Fragment>
-                <Nav.Item active to="/overview" value="Overview" icon="globe"/>
-                <Nav.Item to="/wallet" value="Wallet" icon="credit-card"/>
-                <Nav.Item to="/profile" value="Profile" icon="user" />
+                <Nav.Item active={this.isActive('/overview')} to="/overview" value="Overview" icon="globe"/>
+                <Nav.Item active={this.isActive('/wallet')} to="/wallet" value="Wallet" icon="credit-card" />
+                <Nav.Item active={this.isActive('/profile')} to="/profile" value="Profile" icon="user"/>
                 <Nav.Item to="/" value="Logout" onClick={() => this.onClick()} icon="log-out"/>
             </React.Fragment>
             }

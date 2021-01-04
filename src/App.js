@@ -10,7 +10,9 @@ import TitleBar from './TitleBar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Overview from './Dashboard/Overview';
 import Wallet from './Dashboard/Wallet';
-
+import Profile from './Dashboard/AppProfile';
+import AppProfile from './Dashboard/AppProfile';
+import {Alert} from 'tabler-react'
 
 class App extends React.Component{
   async componentDidMount() {
@@ -99,7 +101,13 @@ class App extends React.Component{
                 <Route path='/' exact component={Overview}/>
                 <Route path='/overview' exact component={Overview}/>
                 <Route path='/wallet' exact component={Wallet}/>
+                <Route path='/profile' exact component={AppProfile}/>
               </Router>
+              <div className="footer">
+                <Alert type="danger" icon="alert-triangle">
+                  2FA Authentication is currently disabled - we are working on a solution!
+                </Alert>
+              </div>
             </div>
           </div>
         );  

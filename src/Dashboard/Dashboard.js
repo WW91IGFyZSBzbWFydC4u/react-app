@@ -15,10 +15,6 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard-main">
-        <Router>  
-          <Route path='/' exact component={Overview}/>
-          <Route path='/overview' exact component={Overview}/>
-        </Router>
       </div>
     );
   }

@@ -307,6 +307,13 @@ body .container .content .signup-cont {
   background-color: #f5f7fb;
 }
 
+.footer {
+  align-items: flex-end;
+  background-color: #f5f7fb;
+  justify-content: flex-end;
+  height: 5%;
+}
+
 @keyframes slideIn {
   0% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
