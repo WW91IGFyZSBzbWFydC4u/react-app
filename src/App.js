@@ -5,9 +5,11 @@ import LoginForm from './LoginForm';
 import Spinner from './spinner';
 import './App.scss';
 import Dashboard from './Dashboard/Dashboard';
-import Navbar from './Navbar';
+import Navbar from './Dashboard/Navbar';
 import TitleBar from './TitleBar';
-import { Alert } from "tabler-react";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Overview from './Dashboard/Overview';
+import Wallet from './Dashboard/Wallet';
 
 
 class App extends React.Component{
@@ -81,26 +83,23 @@ class App extends React.Component{
 
     else {
       // HERE YOU 
-      if (UserStore.isLoggedIn) {
+      if (UserStore.isLoggedIn ) {
         return (
           <div className="all">
             <div className="content" id="dashboard-content">
               <div className="titlebar">
                 <TitleBar/>
               </div>
-              <div className="navbar">
-                  <Navbar
-                    onClick = {() => this.doLogout()}
-                  />
-                <div className="dashboard">
-                  <Dashboard
-                    onClick = {() => this.doLogout()}
-                  />
+              <Router>
+                <div className="navbar">
+                    <Navbar
+                      onClick = {() => this.doLogout()}
+                    />
                 </div>
-              </div>
-              <Alert type="warning" isDismissible>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              </Alert>
+                <Route path='/' exact component={Overview}/>
+                <Route path='/overview' exact component={Overview}/>
+                <Route path='/wallet' exact component={Wallet}/>
+              </Router>
             </div>
           </div>
         );  
