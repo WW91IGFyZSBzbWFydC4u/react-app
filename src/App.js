@@ -7,7 +7,7 @@ import './App.scss';
 import Dashboard from './Dashboard/Dashboard';
 import Navbar from './Dashboard/Navbar';
 import TitleBar from './TitleBar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Overview from './Dashboard/Overview';
 import Wallet from './Dashboard/Wallet';
 import Profile from './Dashboard/AppProfile';
@@ -98,7 +98,7 @@ class App extends React.Component {
                     onClick={() => this.doLogout()}
                   />
                 </div>
-                <Route path='/' exact component={Overview} />
+                <Route path='/' exact component={Overview}><Redirect to="/overview" /></Route>
                 <Route path='/overview' exact component={Overview} />
                 <Route path='/wallet' exact component={Wallet} />
                 <Route path='/profile' exact component={AppProfile} />

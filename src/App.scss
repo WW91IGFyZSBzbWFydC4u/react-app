@@ -30,10 +30,13 @@ body {
   background-color: #f5f7fb;
   background-position: 0%;
   z-index: -1;
+  background-image: url("./resources/login_back_2.jpg");
+  background-repeat: repeat;
 }
 
 #root {
-  background-image: url("./resources/login_back_2.jpg");
+  //background-image: url("./resources/login_back_2.jpg");
+  //background-repeat: repeat;
   height: 100%;
   width: 100%;
 }

@@ -89,7 +89,7 @@ class LoginForm extends React.Component{
             type='email'
             id = 'email'
             name = 'email'
-            placeholder = 'Your email'
+            placeholder = 'Your Username'
             value={this.state.username ? this.state.username : ''}
             onChange={(val) => this.setInputValue('username', val)}
           />

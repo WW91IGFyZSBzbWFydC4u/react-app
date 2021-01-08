@@ -96,9 +96,10 @@ class Wallet extends React.Component {
                             </Table.Row>
                         </Table.Body>
                     </Table>
+                    <h4>Approved Addresses</h4>
                     <Table>
                         <Table.Header>
-                            <Table.ColHeader>Approved Address</Table.ColHeader>
+                            <Table.ColHeader>Address</Table.ColHeader>
                             <Table.ColHeader>Approval Date</Table.ColHeader>
                         </Table.Header>
                         <Table.Body>
@@ -116,12 +117,12 @@ class Wallet extends React.Component {
                                 Deposit to Wallet
                             </Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>                     
-                                <p>To deposit to this wallet, please use the following address:</p>
-                                <p><b>bc1qm6qv2jdgjmt4krahrw9wpcyt5mmt7g8h5hz0av</b></p>
-                                <p> </p>
-                                <p>Note: For safety reasons it is required to deposit a set amount of BTC to enable withdrawing to a new address.</p>
-                                <p>This process only needs to be done once.</p>
+                        <Modal.Body>
+                            <p>To deposit to this wallet, please use the following address:</p>
+                            <p><b>bc1qm6qv2jdgjmt4krahrw9wpcyt5mmt7g8h5hz0av</b></p>
+                            <p> </p>
+                            <p>Note: For safety reasons it is required to deposit a set amount of BTC to enable withdrawing to a new address.</p>
+                            <p>This process only needs to be done once.</p>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={() => this.switchModalShow()}>Close</Button>
@@ -147,7 +148,7 @@ class Wallet extends React.Component {
                                     </Form.FieldSet>
                                     <div id="divHint">
                                         <p>For safety reasons it is required to approve new addresses before withdrawing is allowed.</p>
-                                        <p>A new address is approved by a deposit from the new address surpassing the configured limit (0.02 BTC).</p>
+                                        <p>A new address is approved by a deposit surpassing the configured limit (0.02 BTC).</p>
                                         <p><b>Approved Addresses have no withdrawal limit.</b></p>
                                     </div>
                                 </Form>
