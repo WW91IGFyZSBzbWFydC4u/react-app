@@ -4,16 +4,114 @@ import './Dashboard.scss';
 import { Table, Button, Form } from 'tabler-react';
 import { Modal } from 'react-bootstrap';
 
+
 class Wallet extends React.Component {
     constructor(props) {
         super(props);
-        this.value = 1;
-        this.USDexchange = 27000;
         this.modalShow = false;
         this.modalShowWD = false;
         this.state = {
-            fields: {}
+            fields: {},
+            walletvalue: 0,
+            totalbtc: 0,
+            approved: {
+                address: [],
+                date: []
+            }
         }
+
+    }
+
+    renderApproved() {
+        let obj = this.state.approved;
+        let cnt = 0
+        const date = new Date(Date.UTC(2020, 11, 20, 3, 23, 16, 738));
+        try {
+            return Object.keys(obj).map(function () {
+                console.log(cnt)
+                console.log('approvingwall')
+                console.log(obj.address[cnt])
+                console.log(obj.date[cnt])
+                console.log(obj.date[cnt].substring(0,10))
+                return (
+                    <Table.Row>
+                        <Table.Col>{obj.address[cnt]}</Table.Col>
+                        <Table.Col>{obj.date[cnt].substring(0,10) + " " + obj.date[cnt++].substring(11,19)}</Table.Col>
+                    </Table.Row>
+                )
+            })
+        }
+        catch (e) {
+            console.log(e)
+            return;
+        }
+    }
+
+
+    async componentWillMount() {
+        try {
+            let res = await fetch('/overview', {
+                method: 'post',
+                headers: {
+                    'Accept': 'applcication/json',
+                    'Content-Type': 'applcication/json'
+                }
+            });
+
+            let result = await res.json();
+            console.log('start btc calc')
+            for (var i = 0; i < result.data.length; i++) {
+                if (result.data[i].type == 1) {
+                    this.state.totalbtc += result.data[i].amount
+                }
+                else {
+                    this.state.totalbtc -= result.data[i].amount
+                }
+            }
+            console.log(this.state.totalbtc)
+            console.log('end btc calc')
+            console.log('start get conversion')
+            let res2 = await fetch('https://blockchain.info/tobtc?currency=USD&value=1')
+            let result2 = await res2.json()
+            console.log(result2)
+            console.log('end get conversion')
+            this.state.usdbtc = Number.parseFloat(1 / result2).toFixed(2);
+            this.state.walletvalue = Number.parseFloat(this.state.totalbtc * this.state.usdbtc).toFixed(2)
+
+            console.log(this.state.usdbtc)
+            console.log(this.state.walletvalue)
+
+            let res3 = await fetch('/approvedWallets', {
+                method: 'post',
+                headers: {
+                    'Accept': 'applcication/json',
+                    'Content-Type': 'applcication/json'
+                }
+            });
+
+            let result3 = await res3.json();
+            console.log("result")
+            console.log(result3)
+            console.log(result3.data.length)
+
+            for (var k = 0; k < result3.data.length; k++) {
+                this.state.approved.address.push(result3.data[k].address)
+                this.state.approved.date.push(result3.data[k].approveDate)
+
+                //this.state.approved.address.push(result3.data[k].address)
+                //this.state.approved.date.push(result3.data[k].approveDate);
+            }
+
+            console.log("filled approved state:")
+            console.log(this.state.approved)
+
+            this.forceUpdate();
+        }
+        catch (e) {
+            console.log('exc')
+            console.log(e)
+        }
+
     }
 
     onWDsubmit = (event) => {
@@ -38,7 +136,6 @@ class Wallet extends React.Component {
         }
 
         document.getElementById("divHint").style.display = "inline-block";
-
         return;
     }
 
@@ -87,8 +184,8 @@ class Wallet extends React.Component {
                                 </Table.Col>
                                 <Table.Col>Long-Time-Storage</Table.Col>
                                 <Table.Col>bc1qm6qv2jdgjmt4krahrw9wpcyt5mmt7g8h5hz0av</Table.Col>
-                                <Table.Col>{this.value} BTC</Table.Col>
-                                <Table.Col>{this.USD(this.value, this.USDexchange)} $</Table.Col>
+                                <Table.Col>{this.state.totalbtc} BTC</Table.Col>
+                                <Table.Col>{this.state.walletvalue} $</Table.Col>
                                 <Table.Col>
                                     <Button onClick={() => this.switchModalShow()} color="primary">Deposit</Button>
                                     <Button onClick={() => this.switchModalWDShow()} color="secondary">Withdraw</Button>
@@ -103,10 +200,7 @@ class Wallet extends React.Component {
                             <Table.ColHeader>Approval Date</Table.ColHeader>
                         </Table.Header>
                         <Table.Body>
-                            <Table.Row>
-                                <Table.Col>bc1qm6****5884</Table.Col>
-                                <Table.Col>2019-10-10</Table.Col>
-                            </Table.Row>
+                            {this.renderApproved()}
                         </Table.Body>
                     </Table>
                 </div>
