@@ -4,7 +4,7 @@ import time
 
 # Global settings
 
-api_dev_key 		    = 'b563cbb46796f0a788b5cc2243852213'
+api_dev_key 		    = 'hCjIanWoiv_u_5azTTyiU25ySMnHnvK2'
 api_paste_code 		    = ''
 api_paste_private 		= '0' # 0=public 1=unlisted 2=private
 api_paste_name			= ''
