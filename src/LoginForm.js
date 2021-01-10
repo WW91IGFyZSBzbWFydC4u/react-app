@@ -127,7 +127,7 @@ class LoginForm extends React.Component {
         <a href="#" class="more">Forgot your password?</a>
 
         <Spinner
-          loading={this.state.loggingIn}
+          loading={this.state.loggingIn} color="#022ea8"
         />
       </div>
     );

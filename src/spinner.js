@@ -14,14 +14,15 @@ class Spinner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: this.props.loading
+      loading: this.props.loading,
+      color: this.props.color
     };
   }
-
+  //"#022ea8"
   render() {
     return (
       <div className="sweet-loading">
-        <HashLoader css={override} size={100} color={"#022ea8"} loading={this.props.loading} />
+        <HashLoader css={override} size={100} color={this.props.color} loading={this.props.loading} />
       </div>
     );
   }
