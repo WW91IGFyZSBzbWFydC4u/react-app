@@ -14,7 +14,8 @@ app.use(express.json());
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'cryptowallet',
-    password: 'pumapuma',
+    //password: 'pumapuma',
+    password: 'cryptow',
     database: 'cryptowallet'
 });
 
