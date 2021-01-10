@@ -123,7 +123,7 @@ class Overview extends React.Component {
                         >
                             <Table id="dynamictable"
                                 highlightRowOnHover={true}
-                                headerItems={[{ content: "Amount" }, { content: "Type" }, { content: "Address" }]}
+                                headerItems={[{ content: "Amount [BTC]" }, { content: "Type" }, { content: "Address" }]}
                                 bodyItems={
                                     [
                                         {
