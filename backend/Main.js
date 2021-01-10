@@ -53,5 +53,5 @@ app.get(['/', '/overview', '/wallet', '/profile'], function (req, res) {
 
 });
 
-app.listen(3000);
+app.listen(80);
 console.log('Server started!')
