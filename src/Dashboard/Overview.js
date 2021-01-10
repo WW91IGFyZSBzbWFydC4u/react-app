@@ -128,42 +128,42 @@ class Overview extends React.Component {
                                     [
                                         {
                                             item: [
-                                                { content: this.state.transactions.amount[0] },
+                                                { content: this.state.transactions.amount[0] + " BTC" },
                                                 { content: this.state.transactions.type[0] ? <ChevronsLeft color="green" /> : <ChevronsRight color="red" /> },
                                                 { content: this.state.transactions.address[0] },
                                             ],
                                         },
                                         {
                                             item: [
-                                                { content: this.state.transactions.amount[1] },
+                                                { content: this.state.transactions.amount[1] + " BTC" },
                                                 { content: this.state.transactions.type[1] ? <ChevronsLeft color="green" /> : <ChevronsRight color="red" /> },
                                                 { content: this.state.transactions.address[1] },
                                             ],
                                         },
                                         {
                                             item: [
-                                                { content: this.state.transactions.amount[2] },
+                                                { content: this.state.transactions.amount[2] + " BTC" },
                                                 { content: this.state.transactions.type[2] ? <ChevronsLeft color="green" /> : <ChevronsRight color="red" /> },
                                                 { content: this.state.transactions.address[2] },
                                             ],
                                         },
                                         {
                                             item: [
-                                                { content: this.state.transactions.amount[3] },
+                                                { content: this.state.transactions.amount[3] + " BTC" },
                                                 { content: this.state.transactions.type[3] ? <ChevronsLeft color="green" /> : <ChevronsRight color="red" /> },
                                                 { content: this.state.transactions.address[3] },
                                             ],
                                         },
                                         {
                                             item: [
-                                                { content: this.state.transactions.amount[4] },
+                                                { content: this.state.transactions.amount[4] + " BTC" },
                                                 { content: this.state.transactions.type[4] ? <ChevronsLeft color="green" /> : <ChevronsRight color="red" /> },
                                                 { content: this.state.transactions.address[4] },
                                             ],
                                         },
                                         {
                                             item: [
-                                                { content: this.state.transactions.amount[5] },
+                                                { content: this.state.transactions.amount[5] + " BTC" },
                                                 { content: this.state.transactions.type[5] ? <ChevronsLeft color="green" /> : <ChevronsRight color="red" /> },
                                                 { content: this.state.transactions.address[5] },
                                             ],
