@@ -74,7 +74,7 @@ class App extends React.Component {
       return;
       return (
         <div className="app">
-          <div className='loginContainer' style={{background: white}}>
+          <div className='loginContainer'>
             Loading, please wait...
             <Spinner
               loading={true} color='#000000'
