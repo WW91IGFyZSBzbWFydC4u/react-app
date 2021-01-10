@@ -105,7 +105,7 @@ class App extends React.Component {
                 <Route path='/profile' exact component={AppProfile} />
               </Router>
               <div className="footer">
-                <Alert type="danger" icon="alert-triangle">
+                <Alert type="danger" icon="alert-triangle" isDismissible>
                   2FA Authentication is currently disabled - we are working on a solution!
                 </Alert>
               </div>
