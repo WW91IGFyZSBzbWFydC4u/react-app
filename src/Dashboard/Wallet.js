@@ -36,7 +36,7 @@ class Wallet extends React.Component {
                 return (
                     <Table.Row>
                         <Table.Col>{obj.address[cnt]}</Table.Col>
-                        <Table.Col>{obj.date[cnt].substring(0,10)}</Table.Col>
+                        <Table.Col>{obj.date[cnt++].substring(0,10)}</Table.Col>
                     </Table.Row>
                 )
             })
