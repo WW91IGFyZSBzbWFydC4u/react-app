@@ -17,7 +17,8 @@ class Wallet extends React.Component {
             approved: {
                 address: [],
                 date: []
-            }
+            },
+            walletSec: 0
         }
 
     }
@@ -25,6 +26,7 @@ class Wallet extends React.Component {
     renderApproved() {
         let obj = this.state.approved;
         let cnt = 0
+        console.log(obj.length)
         try {
             return Object.keys(obj).map(function () {
                 console.log(cnt)
@@ -134,6 +136,32 @@ class Wallet extends React.Component {
             return;
         }
 
+
+        try {
+            let res = await fetch('/profile', {
+                method: 'post',
+                headers: {
+                    'Accept': 'applcication/json',
+                    'Content-Type': 'applcication/json'
+                }
+            });
+
+            let result = await res.json();
+
+            console.log('profile')
+            if (result.success) {
+                this.setState({ walletSec: result.data[0].walletsec })
+                console.log(this.state)
+
+            }
+
+            this.forceUpdate();
+        }
+        catch (e) {
+            console.log('exc')
+            console.log(e)
+        }
+
         document.getElementById("divHint").style.display = "inline-block";
         return;
     }
@@ -241,7 +269,7 @@ class Wallet extends React.Component {
                                     </Form.FieldSet>
                                     <div id="divHint">
                                         <p>For safety reasons it is required to approve new addresses before withdrawing is allowed.</p>
-                                        <p>A new address is approved by a deposit surpassing the configured limit (0.02 BTC).</p>
+                                        <p>A new address is approved by a deposit surpassing the configured limit ({this.state.walletSec} BTC).</p>
                                         <p><b>Approved Addresses have no withdrawal limit.</b></p>
                                     </div>
                                 </Form>
