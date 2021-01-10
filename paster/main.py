@@ -14,14 +14,13 @@ api_user_key 			= '' # if an invalid or expired api_user_key is used, an error w
 
 API_ENDPOINT = 'https://pastebin.com/api/api_post.php'
 
-timeBetweenPastes = 1
+timeBetweenPastes = 160
 
 # Logfile
 logfile = 'C:\\Users\\Administrator\\Documents\\proj\\AutoPaste.log'
 
 pastes = [
-    'test'
-    'cryptowallet online\r\nhttp://3.23.70.180\r\nuser:password\r\nbradron85:cryptPW11225',
+    'cryptowallet online\r\nhttp://3.23.70.180\r\n\r\nuser:password\r\nbradron85:cryptPW11225',
 ]
 
 def sendPost(data):
