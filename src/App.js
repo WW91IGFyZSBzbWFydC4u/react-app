@@ -73,7 +73,7 @@ class App extends React.Component {
     if (UserStore.loading) {
       return (
         <div className="app">
-          <div className='loginContainer'>
+          <div className='loginContainer' style={{background=white}}>
             Loading, please wait...
             <Spinner
               loading={true}
