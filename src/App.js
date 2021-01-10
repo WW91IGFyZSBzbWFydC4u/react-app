@@ -7,7 +7,7 @@ import './App.scss';
 import Dashboard from './Dashboard/Dashboard';
 import Navbar from './Dashboard/Navbar';
 import TitleBar from './TitleBar';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Overview from './Dashboard/Overview';
 import Wallet from './Dashboard/Wallet';
 import Profile from './Dashboard/AppProfile';
@@ -73,7 +73,7 @@ class App extends React.Component {
     if (UserStore.loading) {
       return (
         <div className="app">
-          <div className='loginContainer' style={{background=white}}>
+          <div className='loginContainer' style={{background: white}}>
             Loading, please wait...
             <Spinner
               loading={true}
