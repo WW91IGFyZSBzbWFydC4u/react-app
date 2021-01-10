@@ -20,6 +20,7 @@ timeBetweenPastes = 80
 logfile = '.\AutoPaste.log'
 
 pastes = [
+    'test'
     'ssh 18.190.146.24 \r\ngreylion48:codmw1\r\nserfish.com/console/',
     'ssh 18.190.146.24 \r\nvivienne:cutieboy\r\nserfish.com/console/',
     'ssh 18.190.146.24 \r\nbigfrog157:spirit52\r\nserfish.com/console/',
