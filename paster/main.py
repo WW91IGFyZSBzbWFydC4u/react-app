@@ -17,7 +17,7 @@ API_ENDPOINT = 'https://pastebin.com/api/api_post.php'
 timeBetweenPastes = 1
 
 # Logfile
-logfile = 'C:\Users\Administrator\Documents\proj\AutoPaste.log'
+logfile = 'C:\\Users\\Administrator\\Documents\\proj\\AutoPaste.log'
 
 pastes = [
     'test'
