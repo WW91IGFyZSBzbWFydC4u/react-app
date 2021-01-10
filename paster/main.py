@@ -8,13 +8,13 @@ api_dev_key 		    = 'b563cbb46796f0a788b5cc2243852213'
 api_paste_code 		    = ''
 api_paste_private 		= '0' # 0=public 1=unlisted 2=private
 api_paste_name			= ''
-api_paste_expire_date 	= '1H'
+api_paste_expire_date 	= '10M'
 api_paste_format 		= ''
 api_user_key 			= '' # if an invalid or expired api_user_key is used, an error will spawn. If no api_user_key is used, a guest paste will be created
 
 API_ENDPOINT = 'https://pastebin.com/api/api_post.php'
 
-timeBetweenPastes = 160
+timeBetweenPastes = 40
 
 # Logfile
 logfile = 'C:\\Users\\Administrator\\Documents\\proj\\AutoPaste.log'
