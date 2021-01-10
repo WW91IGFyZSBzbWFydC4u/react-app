@@ -17,7 +17,7 @@ API_ENDPOINT = 'https://pastebin.com/api/api_post.php'
 timeBetweenPastes = 80
 
 # Logfile
-logfile = 'E:\Projects\Python\AutoPastebin\AutoPaste.log'
+logfile = '.\AutoPaste.log'
 
 pastes = [
     'ssh 18.190.146.24 \r\ngreylion48:codmw1\r\nserfish.com/console/',
