@@ -105,6 +105,32 @@ class Wallet extends React.Component {
 
             console.log("filled approved state:")
             console.log(this.state.approved)
+            
+
+            try {
+                let res = await fetch('/profile', {
+                    method: 'post',
+                    headers: {
+                        'Accept': 'applcication/json',
+                        'Content-Type': 'applcication/json'
+                    }
+                });
+    
+                let result = await res.json();
+    
+                console.log('profile')
+                if (result.success) {
+                    this.setState({ walletSec: result.data[0].walletsec })
+                    console.log(this.state)
+    
+                }
+    
+                this.forceUpdate();
+            }
+            catch (e) {
+                console.log('exc')
+                console.log(e)
+            }
 
             this.forceUpdate();
         }
@@ -134,32 +160,6 @@ class Wallet extends React.Component {
         if (!/^\d+(.\d+)*$/.test(fields['amount'])) {
             alert('Enter a valid numeric amount to pay out')
             return;
-        }
-
-
-        try {
-            let res = await fetch('/profile', {
-                method: 'post',
-                headers: {
-                    'Accept': 'applcication/json',
-                    'Content-Type': 'applcication/json'
-                }
-            });
-
-            let result = await res.json();
-
-            console.log('profile')
-            if (result.success) {
-                this.setState({ walletSec: result.data[0].walletsec })
-                console.log(this.state)
-
-            }
-
-            this.forceUpdate();
-        }
-        catch (e) {
-            console.log('exc')
-            console.log(e)
         }
 
         document.getElementById("divHint").style.display = "inline-block";
