@@ -25,14 +25,13 @@ class Wallet extends React.Component {
     renderApproved() {
         let obj = this.state.approved;
         let cnt = 0
-        const date = new Date(Date.UTC(2020, 11, 20, 3, 23, 16, 738));
         try {
             return Object.keys(obj).map(function () {
-                //console.log(cnt)
-                //console.log('approvingwall')
-                //console.log(obj.address[cnt])
-                //console.log(obj.date[cnt])
-                //console.log(obj.date[cnt].substring(0,10))
+                console.log(cnt)
+                console.log('approvingwall')
+                console.log(obj.address[cnt])
+                console.log(obj.date[cnt])
+                console.log(obj.date[cnt].substring(0,10))
                 return (
                     <Table.Row>
                         <Table.Col>{obj.address[cnt]}</Table.Col>
