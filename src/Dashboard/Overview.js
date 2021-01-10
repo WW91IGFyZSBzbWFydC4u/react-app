@@ -119,7 +119,7 @@ class Overview extends React.Component {
                     </div>
                     <div className="transactions">
                         <Card
-                            title="Most Recent Transactions"
+                            title="Latest Transactions"
                         >
                             <Table id="dynamictable"
                                 highlightRowOnHover={true}
