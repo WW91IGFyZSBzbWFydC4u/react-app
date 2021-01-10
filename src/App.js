@@ -71,7 +71,7 @@ class App extends React.Component {
   render() {
 
     if (UserStore.loading) {
-      return;
+      return null;
       return (
         <div className="app">
           <div className='loginContainer'>
