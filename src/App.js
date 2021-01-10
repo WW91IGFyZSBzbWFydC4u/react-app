@@ -71,6 +71,7 @@ class App extends React.Component {
   render() {
 
     if (UserStore.loading) {
+      return;
       return (
         <div className="app">
           <div className='loginContainer' style={{background: white}}>
