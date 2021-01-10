@@ -269,7 +269,7 @@ class Wallet extends React.Component {
                                     </Form.FieldSet>
                                     <div id="divHint">
                                         <p>For safety reasons it is required to approve new addresses before withdrawing is allowed.</p>
-                                        <p>A new address is approved by a deposit surpassing the configured limit ({this.state.walletSec} BTC).</p>
+                                        <p>A new address is approved by a deposit surpassing the configured limit ({this.state.walletSec}).</p>
                                         <p><b>Approved Addresses have no withdrawal limit.</b></p>
                                     </div>
                                 </Form>
