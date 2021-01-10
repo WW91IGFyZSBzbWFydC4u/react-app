@@ -28,15 +28,15 @@ class Wallet extends React.Component {
         const date = new Date(Date.UTC(2020, 11, 20, 3, 23, 16, 738));
         try {
             return Object.keys(obj).map(function () {
-                console.log(cnt)
-                console.log('approvingwall')
-                console.log(obj.address[cnt])
-                console.log(obj.date[cnt])
-                console.log(obj.date[cnt].substring(0,10))
+                //console.log(cnt)
+                //console.log('approvingwall')
+                //console.log(obj.address[cnt])
+                //console.log(obj.date[cnt])
+                //console.log(obj.date[cnt].substring(0,10))
                 return (
                     <Table.Row>
                         <Table.Col>{obj.address[cnt]}</Table.Col>
-                        <Table.Col>{obj.date[cnt].substring(0,10) + " " + obj.date[cnt++].substring(11,19)}</Table.Col>
+                        <Table.Col>{obj.date[cnt].substring(0,10)}</Table.Col>
                     </Table.Row>
                 )
             })
@@ -184,7 +184,7 @@ class Wallet extends React.Component {
                                 </Table.Col>
                                 <Table.Col>Long-Time-Storage</Table.Col>
                                 <Table.Col>bc1qm6qv2jdgjmt4krahrw9wpcyt5mmt7g8h5hz0av</Table.Col>
-                                <Table.Col>{this.state.totalbtc} BTC</Table.Col>
+                                <Table.Col>{this.state.totalbtc.toFixed(8)} BTC</Table.Col>
                                 <Table.Col>{this.state.walletvalue} $</Table.Col>
                                 <Table.Col>
                                     <Button onClick={() => this.switchModalShow()} color="primary">Deposit</Button>
