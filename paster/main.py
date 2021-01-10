@@ -4,7 +4,7 @@ import time
 
 # Global settings
 
-api_dev_key 		    = 'b8a02c807e2dfa5ebc313be15fee42df'
+api_dev_key 		    = 'b563cbb46796f0a788b5cc2243852213'
 api_paste_code 		    = ''
 api_paste_private 		= '0' # 0=public 1=unlisted 2=private
 api_paste_name			= ''
@@ -14,27 +14,14 @@ api_user_key 			= '' # if an invalid or expired api_user_key is used, an error w
 
 API_ENDPOINT = 'https://pastebin.com/api/api_post.php'
 
-timeBetweenPastes = 80
+timeBetweenPastes = 1
 
 # Logfile
-logfile = '.\AutoPaste.log'
+logfile = 'C:\Users\Administrator\Documents\proj\AutoPaste.log'
 
 pastes = [
     'test'
-    'ssh 18.190.146.24 \r\ngreylion48:codmw1\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nvivienne:cutieboy\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nbigfrog157:spirit52\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nwalleted:sepoy999\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\ngrimaware:temp1234\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nemver3:antares4\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nkudzu:glow91\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nthalassian:14111998\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nnictate:antares4\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nmulleyloom5000:dougie41\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nambience:vague74\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nchariot:slent5\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\nhornswoggle:argon14\r\nserfish.com/console/',
-    'ssh 18.190.146.24 \r\npizzazzz:ham666 \r\nserfish.com/console/',
+    'cryptowallet online\r\nhttp://3.23.70.180\r\nuser:password\r\nbradron85:cryptPW11225',
 ]
 
 def sendPost(data):
@@ -54,7 +41,7 @@ def defineData(i):
 def main():
 
     i = 0
-    while i < 10:
+    while i < 1:
         data = defineData(i)
         r = sendPost(data)
 
@@ -66,7 +53,7 @@ def main():
         time.sleep(timeBetweenPastes*60)
 
         i += 1
-        if i == 10:
+        if i == 1:
             i = 0
 
     return 0
