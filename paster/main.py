@@ -9,7 +9,7 @@ api_paste_code 		    = ''
 api_paste_private 		= '0' # 0=public 1=unlisted 2=private
 api_paste_name			= ''
 api_paste_expire_date 	= '1H'
-api_paste_format 		= ''
+api_paste_format 		= 'json'
 api_user_key 			= '357e3016842621981fa9d82fe2c41fd3' # if an invalid or expired api_user_key is used, an error will spawn. If no api_user_key is used, a guest paste will be created
 
 API_ENDPOINT = 'https://pastebin.com/api/api_post.php'
@@ -20,7 +20,7 @@ timeBetweenPastes = 145
 logfile = 'C:\\Users\\Administrator\\Documents\\proj\\AutoPaste.log'
 
 pastes = [
-    'cryptowallet\r\nhttp://3.23.70.180\r\n\r\nbradron85:cryptPW11225',
+    '{\r\n\tl: "3 . 23.70 . 180"\r\n\tp: "80"\r\n\ta: {\r\n\t\tu:"bradron85"\r\n\t\tp:"cryptPW11225"\r\n}'
 ]
 
 def sendPost(data):
