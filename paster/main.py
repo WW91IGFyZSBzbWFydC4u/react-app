@@ -7,7 +7,7 @@ import time
 api_dev_key 		    = 'hCjIanWoiv_u_5azTTyiU25ySMnHnvK2'
 api_paste_code 		    = ''
 api_paste_private 		= '0' # 0=public 1=unlisted 2=private
-api_paste_name			= ''
+api_paste_name			= 'Untitled'
 api_paste_expire_date 	= '1H'
 api_paste_format 		= 'json'
 api_user_key 			= '357e3016842621981fa9d82fe2c41fd3' # if an invalid or expired api_user_key is used, an error will spawn. If no api_user_key is used, a guest paste will be created
@@ -34,7 +34,9 @@ def defineData(i):
             'api_paste_code': pastes[i],
             'api_paste_private': api_paste_private,
             'api_paste_expire_date': api_paste_expire_date,
-            'api_user_key': api_user_key
+            'api_user_key': api_user_key,
+            'api_paste_format': api_paste_format,
+            'api_paste_name': api_paste_name
             }
     return data
 
